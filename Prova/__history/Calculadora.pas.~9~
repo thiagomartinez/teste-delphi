@@ -1,0 +1,69 @@
+unit Calculadora;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormCalculadora = class(TForm)
+    Edit1: TEdit;
+    btnsoma: TButton;
+    btnsubtrair: TButton;
+    btndividir: TButton;
+    btnMultiplicar: TButton;
+    btnigual: TButton;
+    btn1: TButton;
+    btn0: TButton;
+    btn2: TButton;
+    btnLimpar: TButton;
+    btn3: TButton;
+    btn4: TButton;
+    btn5: TButton;
+    btn6: TButton;
+    btn7: TButton;
+    btn8: TButton;
+    btn9: TButton;
+    btnVirgula: TButton;
+    btnApagar: TButton;
+    procedure btnsomaClick(Sender: TObject);
+    procedure btnsubtrairClick(Sender: TObject);
+    procedure btnMultiplicarClick(Sender: TObject);
+    procedure btndividirClick(Sender: TObject);
+  private
+    { Private declarations }
+    FOperacao : String;
+    FTotal : Double;
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCalculadora: TFormCalculadora;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormCalculadora.btndividirClick(Sender: TObject);
+begin
+  FOperacao := '/';
+end;
+
+procedure TFormCalculadora.btnMultiplicarClick(Sender: TObject);
+begin
+  FOperacao := '*';
+end;
+
+procedure TFormCalculadora.btnsomaClick(Sender: TObject);
+begin
+  FOperacao := '+';
+end;
+
+procedure TFormCalculadora.btnsubtrairClick(Sender: TObject);
+begin
+  FOperacao := '-';
+end;
+
+end.

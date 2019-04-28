@@ -1,0 +1,7 @@
+unit UFuncionario;
+
+interface
+
+implementation
+
+end.

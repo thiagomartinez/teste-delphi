@@ -1,0 +1,15 @@
+unit UFuncionario;
+
+interface
+
+type
+    TFuncionario = Class
+      private
+      protected
+      public
+      published
+    End;
+
+implementation
+
+end.

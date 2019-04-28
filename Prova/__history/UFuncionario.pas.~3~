@@ -1,0 +1,19 @@
+unit UFuncionario;
+
+interface
+
+Type
+    TFuncionario = class
+      private
+      protected
+      public
+        ID : Integer;
+        Nome : String;
+        CPF : String;
+        Salario : Double;
+      published
+    end;
+
+implementation
+
+end.
