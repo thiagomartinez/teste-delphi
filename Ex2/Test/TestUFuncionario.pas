@@ -52,6 +52,7 @@ var
   ReturnValue: Double;
 begin
   ReturnValue := FFuncionario.CalculaINSS(1);
+  Check(ReturnValue = 80);
   // TODO: Validate method results
 end;
 
@@ -60,6 +61,7 @@ var
   ReturnValue: Double;
 begin
   ReturnValue := FFuncionario.CalculaIR(1);
+  Check(ReturnValue = 120);
   // TODO: Validate method results
 end;
 
