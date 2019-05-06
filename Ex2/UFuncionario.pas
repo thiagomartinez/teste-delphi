@@ -2,7 +2,7 @@ unit UFuncionario;
 
 interface
 
-uses Classes, UDependente, UDataModule, Datasnap.DBClient, Data.DB, Vcl.Dialogs, System.SysUtils, IBX.IBQuery, Datasnap.Provider;
+uses Classes, Datasnap.DBClient, Data.DB, Vcl.Dialogs, System.SysUtils, IBX.IBQuery, Datasnap.Provider, UDependente, UDataModule;
 
 Type
     TFuncionario = class
@@ -33,9 +33,8 @@ Type
         function Alterar : Boolean;
         function Exluir  : Boolean;
         function Consultar() : Boolean;
-        function CalculaINSS : Double;
-        function CalculaIR : Double;
-      published
+        function CalculaINSS(ID: Integer) : Double;
+        function CalculaIR(ID: Integer) : Double;
     end;
 
 implementation
@@ -69,19 +68,19 @@ begin
   end;
 end;
 
-function TFuncionario.CalculaINSS: Double;
+function TFuncionario.CalculaINSS(ID: Integer): Double;
 var Valor: Double;
 begin
-   if Dep.TotalDepCalculaINSS(FID) > 0 then
+   if Dep.TotalDepCalculaINSS(ID) > 0 then
      Valor := (FSalario * 0.08);
    Result := Valor;
 end;
 
-function TFuncionario.CalculaIR: Double;
+function TFuncionario.CalculaIR(ID: Integer): Double;
 var Valor: Double;
     TotalDep : Integer;
 begin
-  TotalDep := Dep.TotalDepCalculaIR(FID);
+  TotalDep := Dep.TotalDepCalculaIR(ID);
   if TotalDep > 0 then
   begin
      Valor := (FSalario - (TotalDep * 100));

@@ -133,7 +133,7 @@ var mensagem : String;
 begin
   PreencherDadosFunc;
   mensagem := EmptyStr;
-  mensagem := 'O valor calculado de INSS é ' + FormatFloat(',0.00',Func.CalculaINSS) + ', e ' + FormatFloat(',0.00',Func.CalculaIR) + ' de IR';
+  mensagem := 'O valor calculado de INSS é ' + FormatFloat(',0.00',Func.CalculaINSS(Func.ID)) + ', e ' + FormatFloat(',0.00',Func.CalculaIR(Func.ID)) + ' de IR';
   ShowMessage(mensagem);
 end;
 

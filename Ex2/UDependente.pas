@@ -32,7 +32,6 @@ Type TDependente = class
     function Consultar(IDFuncionario: Integer) : Boolean;
     function TotalDepCalculaIR(IDFuncionario: Integer) : Integer;
     function TotalDepCalculaINSS(IDFuncionario: Integer) : Integer;
-  published
 end;
 
 implementation
